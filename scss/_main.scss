@@ -1,4 +1,5 @@
 @use "variables" as *;
+
 body {
   background-color: blue; //仮
   color: $black;
@@ -9,6 +10,72 @@ body {
   main {
     max-width: 500px;
     background-color: $gray;
+
+    // ------------------------------------------
+    //       KIDS EVENT
+    // ------------------------------------------
+    #kids-event{
+      padding-top: 100px;
+
+      .inner {
+        position: relative;
+      }
+
+      .section-title {
+        font-size: 48px;
+        margin-bottom: 40px;
+      }
+
+      .triangle--up,
+      .triangle--down {
+        width: 220px;
+        height: 248px;
+        position: absolute;
+        overflow: hidden;
+      }
+
+      .triangle--up img,
+      .triangle--down img {
+        display: block;
+      }
+
+      // ▲上三角
+      .triangle--up {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      // ▼下三角
+      .triangle--down {
+        clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+        background: $black;
+
+        .label {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          transform: translateX(-50%);
+          color: $white;
+          font-size: 18px;
+        }
+
+        img {
+          position: absolute;
+          top: 140px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+        }
+      }
+
+    }
 
     // ------------------------------------------
     //       FOOD
@@ -60,6 +127,7 @@ body {
               }
             }
           }
+
           .swiper-slide-active.food__swiper-card {
             transform: scale(0.95);
             opacity: 1;
@@ -158,6 +226,7 @@ body {
               letter-spacing: 4.8px;
             }
           }
+
           .after-party__item--orange {
             background: rgba($orange, 0.8);
           }
