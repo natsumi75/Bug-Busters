@@ -10,11 +10,45 @@ body main {
   max-width: 500px;
   background-color: #808083;
 }
+body main .yaris-event {
+  display: flex;
+  padding-bottom: 60px;
+}
+body main .yaris-event .yaris-event-left {
+  width: 50%;
+  padding-inline: 20px;
+  background-color: #d9d9d9;
+}
+body main .yaris-event .yaris-event-left h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+body main .yaris-event .yaris-event-left p {
+  margin-bottom: 20px;
+}
+body main .yaris-event .yaris-event-left a {
+  color: #0b0b0d;
+  display: inline-block;
+  background-color: #ff3733;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #0b0b0d;
+  font-size: 12px;
+  padding: 5px 8px;
+  margin-right: 10px;
+}
+body main .yaris-event .yaris-event-right {
+  width: 50%;
+}
+body main .yaris-event .yaris-event-right img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 body main .experience {
   background-color: #0b0b0d;
 }
 body main .experience .inner {
-  padding-bottom: 400px;
+  padding-bottom: 450px;
 }
 body main .experience .experience-item-left {
   position: relative;
@@ -27,7 +61,7 @@ body main .experience .experience-item-left .experience-item-left-text {
   position: absolute;
   bottom: -90px;
   right: 5px;
-  padding: 10px 20px;
+  padding: 16px 24px;
 }
 body main .experience .experience-item-left .experience-item-left-text span {
   color: #f28343;
@@ -46,7 +80,7 @@ body main .experience .experience-item-right .experience-item-left-text {
   border-radius: 10px;
   color: #0b0b0d;
   background-color: #f5f5f5;
-  padding: 10px 20px;
+  padding: 16px 24px;
   z-index: 10;
 }
 body main .experience .experience-item-right .experience-item-left-text span {
@@ -61,6 +95,34 @@ body main .experience .experience-item-right .experience-item-left-img {
 body main .kids-event,
 body main .kids-experience {
   padding: 120px 0;
+body main .talk-show {
+  background-color: #0b0b0d;
+  position: relative;
+  margin-top: 50px;
+  padding-bottom: 80px;
+}
+body main .talk-show .time {
+  position: absolute;
+  right: 30px;
+  top: 160px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f28343;
+}
+body main .talk-show .talk-show-text {
+  width: 400px;
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 16px 24px;
+}
+body main .talk-show .talk-show-text span {
+  color: #f28343;
+}
+body main #kids-event {
+  padding-top: 100px;
 }
 body main .kids-event .inner,
 body main .kids-experience .inner {
@@ -96,6 +158,11 @@ body main .triangle--up {
 }
 body main .triangle--up img {
   display: block;
+}
+body main #kids-event .triangle--up {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+body main #kids-event .triangle--up img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -113,6 +180,8 @@ body main .triangle--down {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   mask-position: center;
+body main #kids-event .triangle--down {
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
   background: #0b0b0d;
   display: flex;
   flex-direction: column;
