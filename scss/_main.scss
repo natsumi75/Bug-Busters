@@ -75,66 +75,149 @@ body {
     // ------------------------------------------
     //       KIDS EVENT
     // ------------------------------------------
-    #kids-event {
-      padding-top: 100px;
 
-      .inner {
-        position: relative;
-      }
+    .kids-event,
+    .kids-experience {
+      padding: 120px 0;
+    }
 
-      .section-title {
-        font-size: 48px;
-        margin-bottom: 40px;
-      }
+    .kids-event .inner,
+    .kids-experience .inner {
+      position: relative;
+    }
 
-      .triangle--up,
-      .triangle--down {
-        width: 220px;
-        height: 248px;
-        position: absolute;
-        overflow: hidden;
-      }
+    .triangle-group {
+      position: relative;
+      width: 422px;
+      margin: 0 auto 100px;
+    }
 
-      .triangle--up img,
-      .triangle--down img {
-        display: block;
-      }
+    /* 三角形共通 */
+    .triangle--up,
+    .triangle--down {
+      position: absolute;
+      width: 170px;
+      height: 153px; // aspect-ratioより固定の方が今は安定
+      overflow: hidden;
+    }
 
-      // ▲上三角
-      .triangle--up {
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    /* 上向き三角形（画像） */
+    .triangle--up {
+      -webkit-mask-image: url("/img/triangle-up.svg");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-position: center;
 
-        img {
-          width: 100%;
-          height: 100%;
-          display: block;
-          object-fit: cover;
-          object-position: center;
-        }
-      }
+      mask-image: url("/img/triangle-up.svg");
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+    }
 
-      // ▼下三角
-      .triangle--down {
-        clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-        background: $black;
+    .triangle--up img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .label {
-          position: absolute;
-          left: 50%;
-          bottom: 40px;
-          transform: translateX(-50%);
-          color: $white;
-          font-size: 18px;
-        }
+    /* 下向き三角形（黒） */
+    .triangle--down {
+      -webkit-mask-image: url("/img/triangle-down.svg");
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-position: center;
 
-        img {
-          position: absolute;
-          top: 140px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 60px;
-        }
-      }
+      mask-image: url("/img/triangle-down.svg");
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+
+      background: $black;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px 0;
+      box-sizing: border-box;
+    }
+
+    .triangle--down .label {
+      font-family: $font-family-en;
+      font-size: 18px;
+      line-height: 1.1;
+      color: $white;
+      letter-spacing: 1px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .triangle--down img {
+      display: block;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* KIDS EVENT */
+    .wood-work {
+      height: 210px;
+    }
+
+    .wood-work .triangle--up {
+      top: 38px;
+      left: 24px;
+    }
+
+    .wood-work .triangle--down {
+      top: 0;
+      right: 24px;
+    }
+
+    .kids-dance {
+      height: 210px;
+    }
+
+    .kids-dance .triangle--down {
+      top: 0;
+      left: 16px;
+    }
+
+    .kids-dance .triangle--up {
+      top: 38px;
+      right: 24px;
+    }
+
+    /* KIDS EXPERIENCE */
+    .pit-crew {
+      height: 210px;
+    }
+
+    .pit-crew .triangle--down {
+      top: 0;
+      left: 16px;
+    }
+
+    .pit-crew .triangle--up {
+      top: 38px;
+      right: 24px;
+    }
+
+    .e-sports {
+      height: 210px;
+    }
+
+    .e-sports .triangle--up {
+      top: 38px;
+      left: 24px;
+    }
+
+    .e-sports .triangle--down {
+      top: 0;
+      right: 24px;
     }
 
     // ------------------------------------------
@@ -315,15 +398,18 @@ body {
 
         .access__info {
           padding-left: 20px;
+
           .access__info-text {
             padding-bottom: 20px;
           }
+
           .access__info-text:last-child {
             padding-bottom: 0;
           }
         }
       }
     }
+
     .access__method-text:first-child {
       padding-bottom: 20px;
     }
@@ -367,6 +453,7 @@ body {
           font-size: 20px;
         }
       }
+
       .copyright {
         font-size: 14px;
         margin-bottom: 50px;
