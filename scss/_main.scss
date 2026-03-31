@@ -14,11 +14,51 @@ body {
     // ------------------------------------------
     //       GR YARIS EXPERIENCE
     // ------------------------------------------
+    .yaris-event {
+      display: flex;
+      padding-bottom: 60px;
+
+      .yaris-event-left {
+        width: 50%;
+        padding-inline: 20px;
+        background-color: $gray;
+
+        h3 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 20px;
+        }
+
+        a {
+          color: $black;
+          display: inline-block;
+          background-color: $red;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px $black;
+          font-size: 12px;
+          padding: 5px 8px;
+          margin-right: 10px;
+        }
+      }
+
+      .yaris-event-right {
+        width: 50%;
+
+        img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+
     .experience {
       background-color: $black;
 
       .inner {
-        padding-bottom: 400px;
+        padding-bottom: 450px;
       }
 
       .experience-item-left {
@@ -32,7 +72,7 @@ body {
           position: absolute;
           bottom: -90px;
           right: 5px;
-          padding: 10px 20px;
+          padding: 16px 24px;
 
           span {
             color: $orange;
@@ -55,7 +95,7 @@ body {
           border-radius: 10px;
           color: $black;
           background-color: $white;
-          padding: 10px 20px;
+          padding: 16px 24px;
           z-index: 10;
 
           span {
@@ -68,6 +108,36 @@ body {
           position: absolute;
           top: 120px;
           left: 30%;
+        }
+      }
+    }
+
+    .talk-show {
+      background-color: $black;
+      position: relative;
+      margin-top: 50px;
+      padding-bottom: 80px;
+
+      .time {
+        position: absolute;
+        right: 30px;
+        top: 160px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $orange
+      }
+
+      .talk-show-text {
+        width: 400px;
+        position: absolute;
+        bottom: 60px;
+        right: 30px;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 16px 24px;
+
+        span {
+          color: $orange;
         }
       }
     }
@@ -315,15 +385,18 @@ body {
 
         .access__info {
           padding-left: 20px;
+
           .access__info-text {
             padding-bottom: 20px;
           }
+
           .access__info-text:last-child {
             padding-bottom: 0;
           }
         }
       }
     }
+
     .access__method-text:first-child {
       padding-bottom: 20px;
     }
@@ -367,6 +440,7 @@ body {
           font-size: 20px;
         }
       }
+
       .copyright {
         font-size: 14px;
         margin-bottom: 50px;
