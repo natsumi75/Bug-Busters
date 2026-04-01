@@ -9,20 +9,16 @@ body {
 body main {
   max-width: 500px;
   background-color: #808083;
-  /* 三角形共通 */
-  /* 上向き三角形（画像） */
-  /* 下向き三角形（黒） */
-  /* KIDS EVENT */
-  /* KIDS EXPERIENCE */
 }
 body main .yaris-event {
   display: flex;
-  padding-bottom: 60px;
+  padding-block: 60px;
 }
 body main .yaris-event .yaris-event-left {
   width: 50%;
-  padding-inline: 20px;
+  padding: 20px;
   background-color: #d9d9d9;
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
 }
 body main .yaris-event .yaris-event-left h3 {
   text-align: center;
@@ -38,11 +34,12 @@ body main .yaris-event .yaris-event-left a {
   border-radius: 10px;
   box-shadow: 5px 5px 5px #0b0b0d;
   font-size: 12px;
-  padding: 5px 8px;
+  padding: 8px 16px;
   margin-right: 10px;
 }
 body main .yaris-event .yaris-event-right {
   width: 50%;
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
 }
 body main .yaris-event .yaris-event-right img {
   height: 200px;
@@ -136,12 +133,18 @@ body main .triangle-group {
   width: 422px;
   margin: 0 auto 100px;
 }
+body main {
+  /* 三角形共通 */
+}
 body main .triangle--up,
 body main .triangle--down {
   position: absolute;
   width: 170px;
   height: 153px;
   overflow: hidden;
+}
+body main {
+  /* 上向き三角形（画像） */
 }
 body main .triangle--up {
   -webkit-mask-image: url("/img/triangle-up.svg");
@@ -159,6 +162,9 @@ body main .triangle--up img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+body main {
+  /* 下向き三角形（黒） */
 }
 body main .triangle--down {
   -webkit-mask-image: url("/img/triangle-down.svg");
@@ -195,6 +201,9 @@ body main .triangle--down img {
      object-fit: contain;
   flex-shrink: 0;
 }
+body main {
+  /* KIDS EVENT */
+}
 body main .wood-work {
   height: 210px;
 }
@@ -216,6 +225,9 @@ body main .kids-dance .triangle--down {
 body main .kids-dance .triangle--up {
   top: 38px;
   right: 24px;
+}
+body main {
+  /* KIDS EXPERIENCE */
 }
 body main .pit-crew {
   height: 210px;
@@ -356,7 +368,6 @@ body main .after-party .inner .after-party__items .after-party__item .after-part
   padding: 20px;
   background: rgba(11, 11, 13, 0.9);
   text-align: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 20px auto 0;
@@ -454,7 +465,6 @@ a {
   font-size: 48px;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -497,4 +507,4 @@ a {
 
 .bold {
   font-weight: 700;
-}
+}/*# sourceMappingURL=style.css.map */
