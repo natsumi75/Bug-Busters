@@ -1,19 +1,68 @@
 @use "variables" as *;
 
 body {
-  background-color: red; //仮
+  background-color: blue;
   color: $black;
   font-family: $font-family-ja;
   font-size: 16px;
   font-weight: 400;
+  margin: 0;
 
-  main {
+  .mv {
+    position: fixed;
+    inset: 0;
+    background: url("/img/mv.png") center / cover no-repeat;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main {
+    position: relative;
     max-width: 500px;
-    background-color: $dark-gray;
+    margin-left: auto;
+    margin-right: 20%;
+
+    .main__inner {
+      width: 100%;
+
+      margin-top: calc(100vh + 100px);
+      background: $dark-gray;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 25px;
+        background: url("/img/side-bar.png") repeat-y center / contain;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      &::before {
+        left: -25px;
+      }
+
+      &::after {
+        right: -25px;
+        transform: scaleX(-1);
+      }
+    }
+
+    // ------------------------------------------
+    //       fv
+    // ------------------------------------------
+
+    .fv {
+    }
 
     // ------------------------------------------
     //       GR YARIS EXPERIENCE
     // ------------------------------------------
+
     .yaris-event {
       display: flex;
       padding-block: 60px;
