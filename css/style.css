@@ -49,23 +49,47 @@ body .main .main__inner::after {
   right: -25px;
   transform: scaleX(-1);
 }
+body .main .fv {
+  width: 100%;
+}
+body .main .fv .fv-text {
+  color: #f5f5f5;
+  position: relative;
+  margin-left: 30px;
+}
+body .main .fv h1 {
+  font-size: 48px;
+  position: absolute;
+  bottom: 30px;
+  margin-bottom: 20px;
+}
+body .main .fv p {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+}
 body .main .yaris-event {
+  padding-block: 50px;
+  margin-block: 80px;
+}
+body .main .yaris-event .yaris-event-inner {
   display: flex;
-  padding-block: 60px;
+  background-color: #d9d9d9;
+  transform: skewY(10deg);
 }
 body .main .yaris-event .yaris-event-left {
   width: 50%;
-  padding: 20px;
-  background-color: #d9d9d9;
-  -webkit-clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
-          clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
+  transform: skewY(-10deg);
+  padding-block: 40px;
 }
 body .main .yaris-event .yaris-event-left h3 {
   text-align: center;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 body .main .yaris-event .yaris-event-left p {
   margin-bottom: 20px;
+  padding-inline: 20px;
 }
 body .main .yaris-event .yaris-event-left a {
   color: #0b0b0d;
@@ -75,15 +99,16 @@ body .main .yaris-event .yaris-event-left a {
   box-shadow: 5px 5px 5px #0b0b0d;
   font-size: 12px;
   padding: 8px 16px;
-  margin-right: 10px;
+  margin-left: 20px;
 }
 body .main .yaris-event .yaris-event-right {
   width: 50%;
-  -webkit-clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
-          clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 75%);
+  display: flex;
 }
 body .main .yaris-event .yaris-event-right img {
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -536,3 +561,4 @@ a {
 .bold {
   font-weight: 700;
 }
+/*# sourceMappingURL=style.css.map */
