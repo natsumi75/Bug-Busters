@@ -63,19 +63,184 @@ body {
         color: $white;
         position: relative;
         margin-left: 30px;
+
+        p {
+          bottom: 10px;
+        }
       }
 
-      h1 {
-        font-size: 48px;
-        position: absolute;
-        bottom: 30px;
-        margin-bottom: 20px;
+      .yaris-contents-fi {
+
+        h1 {
+          font-size: 48px;
+          position: absolute;
+          bottom: 30px;
+        }
+
+        p {
+          font-size: 24px;
+          position: absolute;
+          bottom: 6px;
+        }
+
+        img {
+          width: 500px;
+          height: 500px;
+          object-fit: cover;
+        }
       }
 
-      p {
-        font-size: 24px;
+      .yaris-contents-s {
+        .yaris-contents-s-text-top {
+          position: absolute;
+          bottom: 100px;
+          margin-left: 20px;
+          font-size: 32px;
+        }
+
+        .yaris-contents-s-text-bottom {
+          position: absolute;
+          bottom: 50px;
+          margin-left: 170px;
+          font-size: 32px;
+        }
+      }
+
+      .yaris-contents-t {
+        p {
+          position: absolute;
+          font-size: 32px;
+          margin-left: 20px;
+          bottom: 50px;
+        }
+      }
+
+      .yaris-contents-s,
+      .yaris-contents-t {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: $black;
+        color: $white;
+      }
+
+      .yaris-contents-s img,
+      .yaris-contents-t img {
         position: absolute;
-        bottom: 20px;
+        width: 150px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .yaris-contents-s img:nth-child(1) {
+        top: 20px;
+        left: 30%;
+      }
+
+      .yaris-contents-s img:nth-child(2) {
+        top: 175px;
+        left: 8%;
+      }
+
+      .yaris-contents-s img:nth-child(3) {
+        top: 55px;
+        left: 65%;
+      }
+
+      .yaris-contents-s img:nth-child(4) {
+        top: 200px;
+        left: 45%;
+      }
+
+      .yaris-contents-t img:nth-child(1) {
+        top: 10px;
+        left: 25%;
+        transform: rotate(-5deg);
+      }
+
+      .yaris-contents-t img:nth-child(2) {
+        top: 25px;
+        left: 40%;
+        transform: rotate(-3deg);
+      }
+
+      .yaris-contents-t img:nth-child(3) {
+        bottom: 10px;
+        left: 5%;
+        transform: rotate(-8deg);
+      }
+
+      .yaris-contents-t img:nth-child(4) {
+        bottom: 15px;
+        left: 40%;
+        transform: rotate(5deg);
+      }
+
+      .yaris-contents-t img:nth-child(5) {
+        top: 220px;
+        left: 20%;
+        transform: rotate(-3deg);
+      }
+
+      .yaris-contents-t img:nth-child(6) {
+        top: 20px;
+        left: 65%;
+        transform: rotate(6deg);
+      }
+
+      .yaris-contents-t img:nth-child(7) {
+        top: 220px;
+        left: 67%;
+        transform: rotate(-6deg);
+      }
+
+      .yaris-contents-t img:nth-child(8) {
+        top: 43px;
+        left: 5%;
+        transform: rotate(4deg);
+      }
+
+      .yaris-contents-fo {
+        position: relative;
+
+        img {
+          width: 500px;
+          height: 500px;
+          object-fit: cover;
+          position: relative;
+        }
+
+        h2 {
+          font-size: 128px;
+          color: $gray;
+          position: absolute;
+          left: 120px;
+          top: 45px;
+          z-index: 10;
+        }
+
+        p {
+          color: $gray;
+        }
+
+        span {
+          color: $red;
+        }
+
+        .top-text {
+          position: absolute;
+          top: 210px;
+          font-size: 54px;
+          margin-left: 120px;
+        }
+
+        .bottom-text {
+          position: absolute;
+          top: 270px;
+          font-size: 40px;
+          margin-left: 100px;
+        }
       }
     }
 
