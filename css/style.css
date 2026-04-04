@@ -362,6 +362,7 @@ body .main .kids-experience .inner {
   position: relative;
   max-width: 500px;
   width: 100%;
+  height: 620px;
   margin: 40px auto 0;
 }
 body .main .wood-work,
@@ -374,7 +375,7 @@ body .main .triangle-group {
   position: relative;
   width: 100%;
   max-width: 500px;
-  height: 180px;
+  height: 620px;
   margin: 0 auto;
 }
 body .main .triangle--down {
@@ -457,13 +458,6 @@ body .main .triangle--down img {
   -o-object-fit: contain;
      object-fit: contain;
   flex-shrink: 0;
-}
-body .main .kids-event .inner {
-  position: relative;
-  max-width: 500px;
-  width: 100%;
-  margin: 40px auto 0;
-  height: auto;
 }
 body .main .kids-event .inner .wood-work,
 body .main .kids-event .inner .kids-dance {
