@@ -21,9 +21,9 @@ body .main {
   max-width: 500px;
   margin-left: auto;
   margin-right: 20%;
-  /* 三角形共通 */
-  /* 上向き三角形（画像） */
-  /* 下向き三角形（黒） */
+  /* ▼下向き三角形の共通サイズ */
+  /* ▲上向き三角形（画像） */
+  /* ▼下向き三角形（黒） */
   /* KIDS EVENT */
   /* KIDS EXPERIENCE */
 }
@@ -188,25 +188,45 @@ body .main .talk-show .talk-show-text span {
 }
 body .main .kids-event,
 body .main .kids-experience {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 body .main .kids-event .inner,
 body .main .kids-experience .inner {
   position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto 0;
+}
+body .main .wood-work,
+body .main .kids-dance,
+body .main .pit-crew,
+body .main .e-sports {
+  position: static;
 }
 body .main .triangle-group {
   position: relative;
-  width: 422px;
-  margin: 0 auto 100px;
+  width: 100%;
+  max-width: 500px;
+  height: 180px;
+  margin: 0 auto;
 }
-body .main .triangle--up,
 body .main .triangle--down {
   position: absolute;
-  width: 170px;
-  height: 153px;
+  width: 330px;
+  height: 286px;
   overflow: hidden;
 }
 body .main .triangle--up {
+  position: absolute;
+  width: 330px;
+  height: 286px;
+  overflow: visible;
+}
+body .main .triangle--up::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0b0b0d;
   -webkit-mask-image: url("/img/triangle-up.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -215,13 +235,25 @@ body .main .triangle--up {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   mask-position: center;
+  z-index: 0;
 }
 body .main .triangle--up img {
-  display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 2.5px;
+  left: 4.5px;
+  width: 321px;
+  height: 281px;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-mask-image: url("/img/triangle-up.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  mask-image: url("/img/triangle-up.svg");
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-position: center;
+  z-index: 1;
 }
 body .main .triangle--down {
   -webkit-mask-image: url("/img/triangle-down.svg");
@@ -236,14 +268,14 @@ body .main .triangle--down {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px 0;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 55px 16px 0;
   box-sizing: border-box;
 }
 body .main .triangle--down .label {
   font-family: "Oswald", sans-serif;
-  font-size: 18px;
+  font-size: 32px;
   line-height: 1.1;
   color: #f5f5f5;
   letter-spacing: 1px;
@@ -252,55 +284,57 @@ body .main .triangle--down .label {
 }
 body .main .triangle--down img {
   display: block;
+  padding-top: 20px;
   width: 80px;
   height: 80px;
   -o-object-fit: contain;
      object-fit: contain;
   flex-shrink: 0;
 }
-body .main .wood-work {
-  height: 210px;
+body .main .kids-event .inner {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto 0;
+  height: auto;
 }
-body .main .wood-work .triangle--up {
-  top: 38px;
-  left: 24px;
+body .main .kids-event .inner .wood-work,
+body .main .kids-event .inner .kids-dance {
+  width: auto;
+  height: auto;
+  margin: 0;
 }
-body .main .wood-work .triangle--down {
-  top: 0;
-  right: 24px;
+body .main .kids-event .inner .wood-work .triangle--up {
+  top: 30px;
+  left: 35px;
 }
-body .main .kids-dance {
-  height: 210px;
+body .main .kids-event .inner .wood-work .triangle--down {
+  top: 30px;
+  right: -70px;
 }
-body .main .kids-dance .triangle--down {
-  top: 0;
-  left: 16px;
+body .main .kids-event .inner .kids-dance .triangle--down {
+  top: 295px;
+  left: 35px;
 }
-body .main .kids-dance .triangle--up {
-  top: 38px;
-  right: 24px;
+body .main .kids-event .inner .kids-dance .triangle--up {
+  top: 295px;
+  right: -70px;
 }
-body .main .pit-crew {
-  height: 210px;
+body .main .kids-experience .inner .pit-crew .triangle--up {
+  top: 30px;
+  right: 35px;
 }
-body .main .pit-crew .triangle--down {
-  top: 0;
-  left: 16px;
+body .main .kids-experience .inner .pit-crew .triangle--down {
+  top: 30px;
+  left: -70px;
 }
-body .main .pit-crew .triangle--up {
-  top: 38px;
-  right: 24px;
+body .main .kids-experience .inner .e-sports .triangle--down {
+  top: 295px;
+  right: 35px;
 }
-body .main .e-sports {
-  height: 210px;
-}
-body .main .e-sports .triangle--up {
-  top: 38px;
-  left: 24px;
-}
-body .main .e-sports .triangle--down {
-  top: 0;
-  right: 24px;
+body .main .kids-experience .inner .e-sports .triangle--up {
+  top: 295px;
+  left: -70px;
 }
 body .main .food {
   background: #d9d9d9;
