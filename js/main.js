@@ -108,6 +108,7 @@ document.addEventListener("click", () => {
   });
 });
 
+// kid's event
 const triangleModalData = {
   "wood-work": {
     subtitle: "遊びながら出来た! が増えていく。小さな成功が次の挑戦に繋がる",
@@ -290,4 +291,102 @@ if (triangleGroups.length) {
       triangleObserver.observe(group);
     });
   }
+}
+
+// yaris
+const fv = document.querySelector('.fv');
+
+const fvObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0
+});
+
+fvObserver.observe(fv);
+
+const target = document.querySelector('.yaris-contents-s');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      const imgs = document.querySelectorAll(
+        '.yaris-contents-s img, .yaris-contents-t img'
+      );
+
+      imgs.forEach((img, index) => {
+        setTimeout(() => {
+          img.classList.add('show');
+        }, 500 + index * 400);
+      });
+
+      const texts = document.querySelectorAll(
+        '.yaris-contents-s-text-top, .yaris-contents-s-text-bottom, .yaris-contents-t-text'
+      );
+
+      texts.forEach((text, index) => {
+        setTimeout(() => {
+          text.classList.add('show');
+        }, 1800 + index * 300);
+      });
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.6,
+  rootMargin: '0px 0px -150px 0px'
+});
+
+if (target) {
+  observer.observe(target);
+}
+
+
+// =====================
+// foエリア
+// =====================
+const fo = document.querySelector('.yaris-contents-fo');
+
+const foObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      const img = fo.querySelector('img');
+      const h2 = fo.querySelector('h2');
+      const top = fo.querySelector('.top-text');
+      const bottom = fo.querySelector('.bottom-text');
+
+      setTimeout(() => {
+        img.classList.add('show');
+      }, 500);
+
+      setTimeout(() => {
+        h2.classList.add('show');
+      }, 1400);
+
+      setTimeout(() => {
+        top.classList.add('show');
+      }, 1900);
+
+      setTimeout(() => {
+        bottom.classList.add('show');
+      }, 2400);
+
+      foObserver.unobserve(entry.target);
+    }
+
+  });
+}, {
+  threshold: 0.6,
+  rootMargin: '0px 0px -150px 0px'
+});
+
+if (fo) {
+  foObserver.observe(fo);
 }

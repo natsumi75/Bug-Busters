@@ -261,37 +261,66 @@ body {
 
     .fv {
       width: 100%;
-
-      .fv-text {
-        color: $white;
-        position: relative;
-        margin-left: 30px;
-
-        p {
-          bottom: 10px;
-        }
-      }
+      background-color: $black;
 
       .yaris-contents-fi {
-
-        h1 {
-          font-size: 48px;
-          position: absolute;
-          bottom: 30px;
-        }
-
-        p {
-          font-size: 24px;
-          position: absolute;
-          bottom: 6px;
-        }
-
         img {
           width: 500px;
           height: 500px;
           object-fit: cover;
+          opacity: 0;
+          position: relative;
+          transform: scale(1.1);
+          transition: all 8s cubic-bezier(0.22, 1, 0.36, 1);
         }
       }
+
+      .fv-text {
+        color: $white;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        z-index: 20;
+        margin-left: 30px;
+
+        h1 {
+          font-size: 40px;
+          opacity: 0;
+          transform: translateY(40px);
+          filter: blur(10px);
+          transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        p {
+          font-size: 16px;
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+      }
+
+      &.show {
+        .yaris-contents-fi img {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .fv-text {
+          h1 {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+            transition-delay: 0.4s;
+          }
+
+          p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.8s;
+          }
+        }
+      }
+
 
       .yaris-contents-s {
         .yaris-contents-s-text-top {
@@ -299,6 +328,10 @@ body {
           bottom: 100px;
           margin-left: 20px;
           font-size: 32px;
+          opacity: 0;
+          transform: translateX(-40px);
+          filter: blur(6px);
+          transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .yaris-contents-s-text-bottom {
@@ -306,6 +339,25 @@ body {
           bottom: 50px;
           margin-left: 170px;
           font-size: 32px;
+          opacity: 0;
+          transform: translateY(40px);
+          filter: blur(6px);
+          transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .yaris-contents-s-text-top.show {
+          opacity: 1;
+          transform: translateX(0);
+          filter: blur(0);
+          transition-delay: 0.3s;
+        }
+
+        .yaris-contents-s-text-bottom.show {
+          opacity: 1;
+          transform: translateY(40px);
+          filter: blur(0);
+          transition-delay: 0.6s;
+          bottom: 100px;
         }
       }
 
@@ -316,6 +368,19 @@ body {
           margin-left: 20px;
           bottom: 50px;
         }
+      }
+
+      .yaris-contents-t-text {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(6px);
+        transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .yaris-contents-t-text.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
       }
 
       .yaris-contents-s,
@@ -334,6 +399,25 @@ body {
         height: 200px;
         border-radius: 10px;
         object-fit: cover;
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+        transition: all 0.8s ease;
+      }
+
+      .yaris-contents-s img.show,
+      .yaris-contents-t img.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .yaris-contents-s img:nth-child(odd),
+      .yaris-contents-t img:nth-child(odd) {
+        transform: translateY(30px) rotate(-5deg) scale(0.9);
+      }
+
+      .yaris-contents-s img:nth-child(even),
+      .yaris-contents-t img:nth-child(even) {
+        transform: translateY(30px) rotate(5deg) scale(0.9);
       }
 
       .yaris-contents-s img:nth-child(1) {
@@ -412,11 +496,15 @@ body {
           height: 500px;
           object-fit: cover;
           position: relative;
+          opacity: 0;
+          transform: scale(1.1);
+          filter: blur(6px);
+          transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         h2 {
           font-size: 128px;
-          color: $gray;
+          color: linear-gradient(0deg, #bebebe, #7e7d7f 52%);
           position: absolute;
           left: 120px;
           top: 45px;
@@ -441,9 +529,41 @@ body {
         .bottom-text {
           position: absolute;
           top: 270px;
-          font-size: 40px;
-          margin-left: 100px;
+          font-size: 24px;
+          margin-top: 10px;
+          margin-left: 150px;
         }
+      }
+
+      .yaris-contents-fo img.show {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+
+      .yaris-contents-fo h2,
+      .top-text,
+      .bottom-text {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(6px);
+        transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .yaris-contents-fo h2.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        background: linear-gradient(0deg, #bebebe, #39393a 56%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .top-text.show,
+      .bottom-text.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
       }
     }
 
@@ -752,6 +872,7 @@ body {
     }
 
     .triangle-group.is-visible {
+
       .triangle--up,
       .triangle--down {
         opacity: 1;
@@ -759,6 +880,7 @@ body {
       }
 
       .triangle--down:not(.is-flipping) {
+
         &:hover,
         &:focus-visible {
           transform: scale(1);
@@ -799,6 +921,7 @@ body {
     /* KIDS EVENT */
     .kids-event {
       .inner {
+
         .wood-work,
         .kids-dance {
           width: auto;
