@@ -19,52 +19,126 @@
     />
   </head>
 
-  <body>
-    <div class="mv">
-      <div class="mv__logo">
-        <img src="/img/mv-logo.png" alt="" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GR YARIS DRIVE FESTA in NAGOYA</title>
+  <link rel="shortcut icon" href="./img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <div class="mv">
+    <div class="mv__logo">
+      <img src="/img/mv-logo.png" alt="" />
+    </div>
+  </div>
+  <main class="main">
+    <div class="main__inner">
+      <div class="fv">
+        <div class="yaris-contents-fi">
+          <img src="img/gryaris-1.jpg" alt="" />
+
+          <div class="fv-text">
+            <h1>GR YARIS</h1>
+            <p>その走りが、今ここからはじまる。</p>
+          </div>
+        </div>
+        <div class="item talk" data-id="talk">
+          トークショー
+          <div class="popup"></div>
+        </div>
+        <div class="item esports" data-id="kids">
+          E-SPORTS<br />木育体験<br />けん玉
+          <div class="popup"></div>
+        </div>
+        <div class="item ride" data-id="ride">
+          GR YARIS<br />
+          乗車体験
+          <div class="popup"></div>
+        </div>
+        <div class="item pit" data-id="pit">
+          ピット体験
+          <div class="popup"></div>
+        </div>
+        <div class="item dance" data-id="dance">
+          ダンススクール
+          <div class="popup"></div>
+        </div>
+        <div class="item bingo" data-id="bingo">
+          BINGO大会
+          <div class="popup"></div>
+        </div>
+        <div class="item festival" data-id="festival">
+          HIPHOP盆踊り<br />打ち上げ花火
+          <div class="popup"></div>
+        </div>
+      </section>
     </div>
     <main class="main">
       <div class="main__inner">
         <div class="fv">
-          <div class="yaris-contents-fi">
-            <img src="img/gryaris-1.jpg" alt="" />
+          <img src="img/gryaris-1.jpg" alt="" />
 
-            <div class="fv-text">
-              <h1>GR YARIS</h1>
-              <p>その走りが、今ここからはじまる。</p>
-            </div>
-          </div>
+        <div class="yaris-contents-s">
+          <img src="img/gryaris-2.jpg" alt="" />
+          <img src="img/gryaris-2-2.jpg" alt="" />
+          <img src="img/gryaris-2-3.jpg" alt="" />
+          <img src="img/gryaris-2-4.jpg" alt="" />
 
-          <div class="yaris-contents-s">
-            <img src="img/gryaris-2.jpg" alt="" />
-            <img src="img/gryaris-2-2.jpg" alt="" />
-            <img src="img/gryaris-2-3.jpg" alt="" />
-            <img src="img/gryaris-2-4.jpg" alt="" />
+          <p class="yaris-contents-s-text-top">集まりはじめる、</p>
+          <p class="yaris-contents-s-text-bottom">GRの鼓動。</p>
+        </div>
 
-            <p class="yaris-contents-s-text-top">集まりはじめる、</p>
-            <p class="yaris-contents-s-text-bottom">GRの鼓動。</p>
-          </div>
+        <div class="yaris-contents-t">
+          <img src="img/gryaris-1.jpg" alt="" />
+          <img src="img/gryaris-2.jpg" alt="" />
+          <img src="img/gryaris-2-2.jpg" alt="" />
+          <img src="img/gryaris-2-3.jpg" alt="" />
+          <img src="img/gryaris-2-4.jpg" alt="" />
+          <img src="img/gryaris-3.jpg" alt="" />
+          <img src="img/gryaris-3-2.jpg" alt="" />
+          <img src="img/gryaris-3-4.jpg" alt="" />
+          <p>その数、想像を超える。</p>
+        </div>
 
-          <div class="yaris-contents-t">
-            <img src="img/gryaris-1.jpg" alt="" />
-            <img src="img/gryaris-2.jpg" alt="" />
-            <img src="img/gryaris-2-2.jpg" alt="" />
-            <img src="img/gryaris-2-3.jpg" alt="" />
-            <img src="img/gryaris-2-4.jpg" alt="" />
-            <img src="img/gryaris-3.jpg" alt="" />
-            <img src="img/gryaris-3-2.jpg" alt="" />
-            <img src="img/gryaris-3-4.jpg" alt="" />
-            <p>その数、想像を超える。</p>
-          </div>
+        <div class="yaris-contents-fo">
+          <img src="img/gryaris-3-8.jpg" alt="" />
+          <h2>100</h2>
+          <p class="top-text"><span>GR</span> YARIS</p>
+          <p class="bottom-text">圧巻のスケール。</p>
+        </div>
 
-          <div class="yaris-contents-fo">
-            <img src="img/gryaris-3-8.jpg" alt="" />
-            <h2>100</h2>
-            <p class="top-text"><span>GR</span> YARIS</p>
-            <p class="bottom-text">圧巻のスケール。</p>
-          </div>
+      </div>
+
+          <p>集まりはじめる、</p>
+          <p>GRの鼓動。</p>
+
+          <img src="img/gryaris-1.jpg" alt="" />
+          <img src="img/gryaris-2.jpg" alt="" />
+          <img src="img/gryaris-2-2.jpg" alt="" />
+          <img src="img/gryaris-2-3.jpg" alt="" />
+          <img src="img/gryaris-2-4.jpg" alt="" />
+          <img src="img/gryaris-3.jpg" alt="" />
+          <img src="img/gryaris-3-2.jpg" alt="" />
+          <img src="img/gryaris-3-3.jpg" alt="" />
+          <img src="img/gryaris-3-4.jpg" alt="" />
+          <img src="img/gryaris-3-5.jpg" alt="" />
+          <img src="img/gryaris-3-6.jpg" alt="" />
+          <img src="img/gryaris-3-7.jpg" alt="" />
+          <p>その数、想像を超える。</p>
+
+          <img src="img/gryaris-3-8.jpg" alt="" />
+          <h2>100</h2>
+          <p>GR YARIS</p>
+          <p>圧巻のスケール。</p>
         </div>
 
         <section class="yaris-event">
