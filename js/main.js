@@ -108,6 +108,24 @@ document.addEventListener("click", () => {
   });
 });
 
+//countdown
+const targetDate = new Date("2026-10-13"); //イベント日
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+
+  const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+
+  const dayStr = String(days).padStart(3, "0");
+  document.querySelector("#day1 .digit").textContent = dayStr[0];
+  document.querySelector("#day2 .digit").textContent = dayStr[1];
+  document.querySelector("#day3 .digit").textContent = dayStr[2];
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // kid's event
 const triangleModalData = {
   "wood-work": {
@@ -136,7 +154,7 @@ const triangleModalData = {
     `,
   },
   "pit-crew": {
-    subtitle: "君も\"支える側\"から主役になる。今日、君もPitCrewに。",
+    subtitle: '君も"支える側"から主役になる。今日、君もPitCrewに。',
     description:
       "ピットクルーになりきって、レース現場のスピード感と連携の面白さを体験できる<br>体験型プログラム。動きがある体験なので<br>参加実感と写真映えの両方を取りやすい構成です。",
     body: `
@@ -172,7 +190,9 @@ const maskModal = document.querySelector("#js-mask-modal");
 const maskModalImage = document.querySelector("#js-mask-modal-image");
 const maskModalTitle = document.querySelector("#js-mask-modal-title");
 const maskModalSubtitle = document.querySelector("#js-mask-modal-subtitle");
-const maskModalDescription = document.querySelector("#js-mask-modal-description");
+const maskModalDescription = document.querySelector(
+  "#js-mask-modal-description"
+);
 const maskModalBody = document.querySelector("#js-mask-modal-body");
 const maskModalClose = document.querySelector("#js-mask-modal-close");
 
@@ -223,7 +243,7 @@ const openMaskModal = (trigger) => {
     "mask-modal--wood-work",
     "mask-modal--kids-dance",
     "mask-modal--pit-crew",
-    "mask-modal--e-sports",
+    "mask-modal--e-sports"
   );
   maskModal.classList.add(`mask-modal--${modalId}`);
 
@@ -284,7 +304,7 @@ if (triangleGroups.length) {
       {
         threshold: 0.18,
         rootMargin: "0px 0px -8% 0px",
-      },
+      }
     );
 
     triangleGroups.forEach((group) => {
@@ -294,98 +314,102 @@ if (triangleGroups.length) {
 }
 
 // yaris
-const fv = document.querySelector('.fv');
+const fv = document.querySelector(".fv");
 
-const fvObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, {
-  threshold: 0
-});
+const fvObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0,
+  }
+);
 
 fvObserver.observe(fv);
 
-const target = document.querySelector('.yaris-contents-s');
+const target = document.querySelector(".yaris-contents-s");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const imgs = document.querySelectorAll(
+          ".yaris-contents-s img, .yaris-contents-t img"
+        );
 
-      const imgs = document.querySelectorAll(
-        '.yaris-contents-s img, .yaris-contents-t img'
-      );
+        imgs.forEach((img, index) => {
+          setTimeout(() => {
+            img.classList.add("show");
+          }, 500 + index * 400);
+        });
 
-      imgs.forEach((img, index) => {
-        setTimeout(() => {
-          img.classList.add('show');
-        }, 500 + index * 400);
-      });
+        const texts = document.querySelectorAll(
+          ".yaris-contents-s-text-top, .yaris-contents-s-text-bottom, .yaris-contents-t-text"
+        );
 
-      const texts = document.querySelectorAll(
-        '.yaris-contents-s-text-top, .yaris-contents-s-text-bottom, .yaris-contents-t-text'
-      );
+        texts.forEach((text, index) => {
+          setTimeout(() => {
+            text.classList.add("show");
+          }, 1800 + index * 300);
+        });
 
-      texts.forEach((text, index) => {
-        setTimeout(() => {
-          text.classList.add('show');
-        }, 1800 + index * 300);
-      });
-
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.6,
-  rootMargin: '0px 0px -150px 0px'
-});
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.6,
+    rootMargin: "0px 0px -150px 0px",
+  }
+);
 
 if (target) {
   observer.observe(target);
 }
 
-
 // =====================
 // foエリア
 // =====================
-const fo = document.querySelector('.yaris-contents-fo');
+const fo = document.querySelector(".yaris-contents-fo");
 
-const foObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+const foObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = fo.querySelector("img");
+        const h2 = fo.querySelector("h2");
+        const top = fo.querySelector(".top-text");
+        const bottom = fo.querySelector(".bottom-text");
 
-    if (entry.isIntersecting) {
+        setTimeout(() => {
+          img.classList.add("show");
+        }, 500);
 
-      const img = fo.querySelector('img');
-      const h2 = fo.querySelector('h2');
-      const top = fo.querySelector('.top-text');
-      const bottom = fo.querySelector('.bottom-text');
+        setTimeout(() => {
+          h2.classList.add("show");
+        }, 1400);
 
-      setTimeout(() => {
-        img.classList.add('show');
-      }, 500);
+        setTimeout(() => {
+          top.classList.add("show");
+        }, 1900);
 
-      setTimeout(() => {
-        h2.classList.add('show');
-      }, 1400);
+        setTimeout(() => {
+          bottom.classList.add("show");
+        }, 2400);
 
-      setTimeout(() => {
-        top.classList.add('show');
-      }, 1900);
-
-      setTimeout(() => {
-        bottom.classList.add('show');
-      }, 2400);
-
-      foObserver.unobserve(entry.target);
-    }
-
-  });
-}, {
-  threshold: 0.6,
-  rootMargin: '0px 0px -150px 0px'
-});
+        foObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.6,
+    rootMargin: "0px 0px -150px 0px",
+  }
+);
 
 if (fo) {
   foObserver.observe(fo);
