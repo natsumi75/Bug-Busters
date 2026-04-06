@@ -437,6 +437,7 @@ body .main .fv .yaris-contents-fo .top-text {
   top: 210px;
   font-size: 54px;
   margin-left: 120px;
+  font-weight: bold;
 }
 body .main .fv .yaris-contents-fo .bottom-text {
   position: absolute;
@@ -478,13 +479,22 @@ body .main .yaris-event {
 }
 body .main .yaris-event .yaris-event-inner {
   display: flex;
-  background-color: #d9d9d9;
+  background-image: linear-gradient(10deg, #bebebe, #39393a 66%);
+  transform: skewY(10deg);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+body .main .yaris-event .yaris-event-inner.active {
+  opacity: 1;
   transform: skewY(10deg);
 }
 body .main .yaris-event .yaris-event-left {
   width: 50%;
   transform: skewY(-10deg);
   padding-block: 40px;
+  opacity: 0;
+  transform: translateX(-80px) skew(-10deg);
+  transition: all 0.8s ease;
 }
 body .main .yaris-event .yaris-event-left h3 {
   text-align: center;
@@ -504,10 +514,17 @@ body .main .yaris-event .yaris-event-left a {
   font-size: 12px;
   padding: 8px 16px;
   margin-left: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
 }
 body .main .yaris-event .yaris-event-right {
   width: 50%;
   display: flex;
+  background-color: linear-gradient(0deg, #bebebe, #39393a 56%);
+  opacity: 0;
+  transform: translateX(80px) scale(1.1) skew(-10deg);
+  transition: all 0.8s ease;
 }
 body .main .yaris-event .yaris-event-right img {
   width: 100%;
@@ -515,6 +532,24 @@ body .main .yaris-event .yaris-event-right img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
+}
+body .main .yaris-event .yaris-event-inner.active .yaris-event-left {
+  opacity: 1;
+  transform: skewY(-10deg);
+}
+body .main .yaris-event .yaris-event-inner.active .yaris-event-right {
+  opacity: 1;
+  transform: skewX(0.5deg);
+}
+body .main .yaris-event .yaris-event-inner.active .yaris-event-left a {
+  opacity: 1;
+  transform: translateY(0);
+}
+body .main .yaris-event .yaris-event-inner.active .yaris-event-left a:nth-child(1) {
+  transition-delay: 0.6s;
+}
+body .main .yaris-event .yaris-event-inner.active .yaris-event-left a:nth-child(2) {
+  transition-delay: 0.8s;
 }
 body .main .experience {
   background-color: #0b0b0d;
@@ -524,6 +559,9 @@ body .main .experience .inner {
 }
 body .main .experience .experience-item-left {
   position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 body .main .experience .experience-item-left .experience-item-left-text {
   width: 60%;
@@ -534,6 +572,9 @@ body .main .experience .experience-item-left .experience-item-left-text {
   bottom: -90px;
   right: 5px;
   padding: 16px 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 body .main .experience .experience-item-left .experience-item-left-text span {
   color: #f28343;
@@ -542,18 +583,27 @@ body .main .experience .experience-item-left .experience-item-left-img {
   border-radius: 10px;
   width: 70%;
 }
+body .main .experience .experience-item-left .experience-item-left-img img {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
 body .main .experience .experience-item-right {
   position: relative;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 body .main .experience .experience-item-right .experience-item-left-text {
   position: absolute;
-  top: 250px;
+  top: 190px;
   left: 5px;
   border-radius: 10px;
   color: #0b0b0d;
   background-color: #f5f5f5;
   padding: 16px 24px;
   z-index: 10;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 body .main .experience .experience-item-right .experience-item-left-text span {
   color: #f28343;
@@ -564,11 +614,35 @@ body .main .experience .experience-item-right .experience-item-left-img {
   top: 120px;
   left: 30%;
 }
+body .main .experience .experience-item-right .experience-item-left-img img {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
+body .main .experience .experience-item-left.active,
+body .main .experience .experience-item-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+body .main .experience .experience-item-left.active .experience-item-left-text,
+body .main .experience .experience-item-right.active .experience-item-left-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+body .main .experience .experience-item-left.active img,
+body .main .experience .experience-item-right.active img {
+  transform: scale(1);
+}
 body .main .talk-show {
   background-color: #0b0b0d;
   position: relative;
   margin-top: 50px;
   padding-bottom: 80px;
+}
+body .main .talk-show .h2 {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.8s ease;
 }
 body .main .talk-show .time {
   position: absolute;
@@ -577,6 +651,14 @@ body .main .talk-show .time {
   font-size: 20px;
   font-weight: bold;
   color: #f28343;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+body .main .talk-show img {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all 1s ease;
 }
 body .main .talk-show .talk-show-text {
   width: 400px;
@@ -586,9 +668,31 @@ body .main .talk-show .talk-show-text {
   background-color: #f5f5f5;
   border-radius: 10px;
   padding: 16px 24px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
 }
 body .main .talk-show .talk-show-text span {
   color: #f28343;
+}
+body .main .talk-show.active h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+body .main .talk-show.active .time {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+body .main .talk-show.active img {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+body .main .talk-show.active .talk-show-text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
 }
 body .main .kids-event .inner,
 body .main .kids-experience .inner {
