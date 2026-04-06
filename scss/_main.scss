@@ -717,6 +717,71 @@ body {
           border-radius: 10px;
           // object-fit: cover;
         }
+
+
+        h2 {
+          font-size: 128px;
+          color: linear-gradient(0deg, #bebebe, #7e7d7f 52%);
+          position: absolute;
+          left: 120px;
+          top: 45px;
+          z-index: 10;
+        }
+
+        p {
+          color: $gray;
+        }
+
+        span {
+          color: $red;
+        }
+
+        .top-text {
+          position: absolute;
+          top: 210px;
+          font-size: 54px;
+          margin-left: 120px;
+          font-weight: bold;
+        }
+
+        .bottom-text {
+          position: absolute;
+          top: 270px;
+          font-size: 24px;
+          margin-top: 10px;
+          margin-left: 150px;
+        }
+      }
+
+      .yaris-contents-fo img.show {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+
+      .yaris-contents-fo h2,
+      .top-text,
+      .bottom-text {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(6px);
+        transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .yaris-contents-fo h2.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        background: linear-gradient(0deg, #bebebe, #39393a 56%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .top-text.show,
+      .bottom-text.show {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
       }
     }
 
@@ -730,7 +795,14 @@ body {
 
       .yaris-event-inner {
         display: flex;
-        background-color: $gray;
+        background-image: linear-gradient(10deg, #bebebe, #39393a 66%);
+        transform: skewY(10deg);
+        opacity: 0;
+        transition: all 0.8s ease;
+      }
+
+      .yaris-event-inner.active {
+        opacity: 1;
         transform: skewY(10deg);
       }
 
@@ -738,6 +810,9 @@ body {
         width: 50%;
         transform: skewY(-10deg);
         padding-block: 40px;
+        opacity: 0;
+        transform: translateX(-80px) skew(-10deg);
+        transition: all 0.8s ease;
 
         h3 {
           text-align: center;
@@ -759,12 +834,19 @@ body {
           font-size: 12px;
           padding: 8px 16px;
           margin-left: 20px;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.4s ease;
         }
       }
 
       .yaris-event-right {
         width: 50%;
         display: flex;
+        background-color: linear-gradient(0deg, #bebebe, #39393a 56%);
+        opacity: 0;
+        transform: translateX(80px) scale(1.1) skew(-10deg);
+        transition: all 0.8s ease;
 
         img {
           width: 100%;
@@ -772,6 +854,29 @@ body {
           display: block;
           object-fit: cover;
         }
+      }
+
+      .yaris-event-inner.active .yaris-event-left {
+        opacity: 1;
+        transform: skewY(-10deg);
+      }
+
+      .yaris-event-inner.active .yaris-event-right {
+        opacity: 1;
+        transform: skewX(0.5deg);
+      }
+
+      .yaris-event-inner.active .yaris-event-left a {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .yaris-event-inner.active .yaris-event-left a:nth-child(1) {
+        transition-delay: 0.6s;
+      }
+
+      .yaris-event-inner.active .yaris-event-left a:nth-child(2) {
+        transition-delay: 0.8s;
       }
     }
 
@@ -782,8 +887,14 @@ body {
         padding-bottom: 450px;
       }
 
+      // =====================
+      // 左
+      // =====================
       .experience-item-left {
         position: relative;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.8s ease;
 
         .experience-item-left-text {
           width: 60%;
@@ -794,6 +905,9 @@ body {
           bottom: -90px;
           right: 5px;
           padding: 16px 24px;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.6s ease;
 
           span {
             color: $orange;
@@ -803,21 +917,35 @@ body {
         .experience-item-left-img {
           border-radius: 10px;
           width: 70%;
+
+          img {
+            transform: scale(1.1);
+            transition: transform 1s ease;
+          }
         }
       }
 
+      // =====================
+      // 右
+      // =====================
       .experience-item-right {
         position: relative;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.8s ease;
 
         .experience-item-left-text {
           position: absolute;
-          top: 250px;
+          top: 190px;
           left: 5px;
           border-radius: 10px;
           color: $black;
           background-color: $white;
           padding: 16px 24px;
           z-index: 10;
+          // opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.6s ease;
 
           span {
             color: $orange;
@@ -829,7 +957,33 @@ body {
           position: absolute;
           top: 120px;
           left: 30%;
+
+          img {
+            transform: scale(1.1);
+            transition: transform 1s ease;
+          }
         }
+      }
+
+      // =====================
+      // アクティブ時（←ここ重要）
+      // =====================
+      .experience-item-left.active,
+      .experience-item-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .experience-item-left.active .experience-item-left-text,
+      .experience-item-right.active .experience-item-left-text {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.4s;
+      }
+
+      .experience-item-left.active img,
+      .experience-item-right.active img {
+        transform: scale(1);
       }
     }
 
@@ -839,6 +993,12 @@ body {
       margin-top: 50px;
       padding-bottom: 80px;
 
+      .h2 {
+        opacity: 0;
+        transform: translateY(-40px);
+        transition: all 0.8s ease;
+      }
+
       .time {
         position: absolute;
         right: 30px;
@@ -846,6 +1006,15 @@ body {
         font-size: 20px;
         font-weight: bold;
         color: $orange;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+      }
+
+      img {
+        opacity: 0;
+        transform: scale(1.2);
+        transition: all 1s ease;
       }
 
       .talk-show-text {
@@ -856,12 +1025,42 @@ body {
         background-color: $white;
         border-radius: 10px;
         padding: 16px 24px;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: all 0.8s ease;
 
         span {
           color: $orange;
         }
       }
+
+      &.active {
+
+        h2 {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .time {
+          opacity: 1;
+          transform: translateX(0);
+          transition-delay: 0.3s;
+        }
+
+        img {
+          opacity: 1;
+          transform: scale(1);
+          transition-delay: 0.2s;
+        }
+
+        .talk-show-text {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.6s;
+        }
+      }
     }
+
 
     // ------------------------------------------
     //       KIDS EVENT

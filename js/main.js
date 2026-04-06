@@ -414,3 +414,54 @@ const foObserver = new IntersectionObserver(
 if (fo) {
   foObserver.observe(fo);
 }
+
+
+//yaris-event
+// ===============================
+// YARIS EVENT アニメーション
+// ===============================
+
+const yarisTargets = document.querySelectorAll('.yaris-event-inner');
+
+const yarisObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.4
+});
+
+yarisTargets.forEach(target => yarisObserver.observe(target));
+
+const expItems = document.querySelectorAll('.experience-item-left, .experience-item-right');
+
+const expObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.4
+});
+
+expItems.forEach(item => expObserver.observe(item));
+
+const talk = document.querySelector('.talk-show');
+
+const talkObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.6,
+  rootMargin: '0px 0px -100px 0px'
+});
+
+if (talk) {
+  talkObserver.observe(talk);
+}
