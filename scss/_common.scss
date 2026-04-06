@@ -30,6 +30,10 @@ a {
   width: fit-content;
   position: relative;
   margin-bottom: 50px;
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    transform 1.2s ease;
 
   &::after {
     content: "";
@@ -42,12 +46,18 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* セクションタイトル右寄せ */
 .section-title--r {
   margin-left: auto;
   padding-left: 10px;
+  transform: translateX(60px);
 
   &::after {
     left: 0;
@@ -58,6 +68,7 @@ a {
 .section-title--l {
   margin-right: auto;
   padding-right: 10px;
+  transform: translateX(-60px);
 
   &::after {
     right: 0;

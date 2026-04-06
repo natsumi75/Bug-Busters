@@ -390,3 +390,32 @@ const foObserver = new IntersectionObserver((entries) => {
 if (fo) {
   foObserver.observe(fo);
 }
+
+const sectionTitles = document.querySelectorAll(".section-title");
+
+if (sectionTitles.length) {
+  if (!("IntersectionObserver" in window)) {
+    sectionTitles.forEach((title) => {
+      title.classList.add("is-visible");
+    });
+  } else {
+    const sectionTitleObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
+
+    sectionTitles.forEach((title) => {
+      sectionTitleObserver.observe(title);
+    });
+  }
+}
