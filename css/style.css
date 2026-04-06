@@ -601,7 +601,7 @@ body .layout .main .area-map img {
   display: block;
   border-radius: 10px;
 }
-<<<<<<< HEAD
+
 body .main .fv .yaris-contents-s img.show,
 body .main .fv .yaris-contents-t img.show {
   opacity: 1;
@@ -740,10 +740,9 @@ body .main .fv .bottom-text.show {
   transform: translateY(0);
   filter: blur(0);
 }
-body .main .yaris-event {
-=======
+body .main .yaris-event {}
+
 body .layout .yaris-event {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   padding-block: 50px;
   margin-block: 80px;
 }
@@ -803,7 +802,6 @@ body .layout .yaris-event .yaris-event-right img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-<<<<<<< HEAD
 body .main .yaris-event .yaris-event-inner.active .yaris-event-left {
   opacity: 1;
   transform: skewY(-10deg);
@@ -822,10 +820,8 @@ body .main .yaris-event .yaris-event-inner.active .yaris-event-left a:nth-child(
 body .main .yaris-event .yaris-event-inner.active .yaris-event-left a:nth-child(2) {
   transition-delay: 0.8s;
 }
-body .main .experience {
-=======
+body .main .experience {}
 body .layout .experience {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   background-color: #0b0b0d;
 }
 body .layout .experience .inner {
@@ -857,15 +853,14 @@ body .layout .experience .experience-item-left .experience-item-left-img {
   border-radius: 10px;
   width: 70%;
 }
-<<<<<<< HEAD
+
 body .main .experience .experience-item-left .experience-item-left-img img {
   transform: scale(1.1);
   transition: transform 1s ease;
 }
-body .main .experience .experience-item-right {
-=======
+body .main .experience .experience-item-right {}
+
 body .layout .experience .experience-item-right {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   position: relative;
   transform: translateX(100px);
   opacity: 0;
@@ -892,7 +887,6 @@ body .layout .experience .experience-item-right .experience-item-left-img {
   top: 120px;
   left: 30%;
 }
-<<<<<<< HEAD
 body .main .experience .experience-item-right .experience-item-left-img img {
   transform: scale(1.1);
   transition: transform 1s ease;
@@ -912,25 +906,22 @@ body .main .experience .experience-item-left.active img,
 body .main .experience .experience-item-right.active img {
   transform: scale(1);
 }
-body .main .talk-show {
-=======
+body .main .talk-show {}
+
 body .layout .talk-show {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   background-color: #0b0b0d;
   position: relative;
   margin-top: 50px;
   padding-bottom: 80px;
 }
-<<<<<<< HEAD
 body .main .talk-show .h2 {
   opacity: 0;
   transform: translateY(-40px);
   transition: all 0.8s ease;
 }
 body .main .talk-show .time {
-=======
+}
 body .layout .talk-show .time {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   position: absolute;
   right: 30px;
   top: 160px;
@@ -961,7 +952,6 @@ body .layout .talk-show .talk-show-text {
 body .layout .talk-show .talk-show-text span {
   color: #f28343;
 }
-<<<<<<< HEAD
 body .main .talk-show.active h2 {
   opacity: 1;
   transform: translateY(0);
@@ -983,10 +973,9 @@ body .main .talk-show.active .talk-show-text {
 }
 body .main .kids-event .inner,
 body .main .kids-experience .inner {
-=======
+}
 body .layout .kids-event .inner,
 body .layout .kids-experience .inner {
->>>>>>> 88d24ed8822a761bbd528ff54d7eae8415a39c56
   position: relative;
   max-width: 500px;
   width: 100%;
